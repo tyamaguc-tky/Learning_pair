@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''For Figure 4C-F'''
+'''For Figure 3'''
 import pandas as pd
 import numpy as np
 import pickle
@@ -21,7 +21,7 @@ init_data = np.array(testdata['z1_1'])#Select an appropreate scRNAseq data for i
 init_ratio = init_data/np.sum(init_data)
 target = np.array(testdata['4c1_1'])#Select an appropreate scRNAseq data for target
 targetratio = target/np.sum(target)
-'''#Activate in Figure 4F
+'''#Activate in Figure 3f
 import random
 randlist = np.array(range(gene_num), dtype=int)
 random.shuffle(randlist)

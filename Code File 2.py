@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Codes for hierarchical clustering analysis used in Figure 4-5
+Codes for hierarchical clustering analysis used in Figures 3-5
 """
 import pickle
 import numpy as np
@@ -8,7 +8,7 @@ import pandas as pd
 from scipy.spatial.distance import pdist, cdist
 #import scRNA-seq data
 '''
-For Figure 4 clustering, E-MTAB-3929, GSM2257302, and GSE75748 were used, which are available from the following web site;
+For Figure 3-4 clustering, E-MTAB-3929, GSM2257302, and GSE75748 were used, which are available from the following web site;
 https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-3929/
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE85066
 https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE75748

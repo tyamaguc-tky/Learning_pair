@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Codes for Figures 1-3
+Codes for Figures 1-2
 """
 import numpy as np
 import pickle
 import random
-listlen = 2#4 or 8 in Figure 2B,C
-listIndex = 1#1 in Fig 1. 1,2,3,6 in Figure 2. 12 in Figure 3.
+listlen = 2#4 or 8 in Figure 2b,c
+listIndex = 1#1 in Figure 1. 1,2,3,6, 12 in Figure 2.
 gene_num = int(listlen**listIndex)
 gene = np.ones(gene_num, int)#indicate [xA, xB] in Figure 1
 target = np.arange(gene_num) + 1
-'''In Figure 3B-F, 4096 high expression genes are selected from GSE96706. 
+'''In Figure 2k-m, 4096 high expression genes are selected from GSE96706. 
 The imported csv file is used as target. 
 target = np.exp2('data')'''
 targetratio = target/np.sum(target)#Target ratio is [1/3, 2/3]
@@ -19,13 +19,13 @@ pair_list = []
 for j in range(pair_num):
     pair_list.append([j, np.ones(listlen, int)])
 pair_dict = dict(pair_list)#dictionary of pairs. Initial state is [1, 1]
-'''#In Figure 3C-D, pickled pair_dict at the end of Figure 3B is loaded as the initial state.
+'''#In Figure 2l-m, pickled pair_dict at the end of Figure 2k is loaded as the initial state.
 f = open('pair_dict_file','rb')
 pair_dict = pickle.load(f)
 f.close()
 '''
 randlist = list(range(gene_num))
-#random.shuffle(randlist)#Activate to shuffle in Figure 2E,H
+#random.shuffle(randlist)#Activate to shuffle in Figure 2e, h-j.
 '''1 and 0 in pair_matrix indicates whether the gene is in the pair or not'''
 pair_matrix = np.zeros((pair_num, listlen, gene_num), int)
 k = 0
@@ -77,8 +77,8 @@ def step_error(xratio, target_p):
         decay = 1E-1
     return decay
 a_inc = 1/10
-gamma = 0#Change to 0~1 in Figure 1L,M
-bias = 1#1e-7 in Figure 1K-M
+gamma = 0#Change to 0~1 in Figure 1l-m
+bias = 1#1e-7 in Figure 1k-m
 def x_change(add_ratio, xD, target_p, mse=1):#Change in each pair
     if np.random.rand() < a_inc:
         if np.random.rand() < gamma:#Additive increae

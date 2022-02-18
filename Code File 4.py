@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''#For the model with an mRNA pool used in Figures 4G-O and 5'''
+'''#For the model with an mRNA pool used in Figures 4 and 5'''
 import numpy as np
 import pickle
 import random
@@ -16,11 +16,11 @@ testdata = pickle.load(f)
 f.close()
 gene_num = len(testdata)
 randlist = np.array(range(gene_num), dtype=int)
-#random.shuffle(randlist)#Activate this in Figure 4I
+#random.shuffle(randlist)#Activate this in Figure 4c
 init_data = np.array(testdata['z1_1'])#[randlist]
 #Select an appropreate scRNAseq data for initial condition
 init_ratio = init_data/np.sum(init_data)
-#random.shuffle(randlist)#Activate this in Figure 4I
+#random.shuffle(randlist)#Activate this in Figure 4c
 target = np.array(testdata['4c1_1'])#[randlist]
 #Select an appropreate scRNAseq data for target.
 targetratio = target/np.sum(target)
@@ -180,7 +180,7 @@ def pairs_dec(curr_pairs, step=4):#MSE dependent decay
                 curr_pairs[ii] = np.random.binomial(xD, 1 - dec)
     return curr_pairs
 
-tmax = int(10**6 / 2)#10**6 in the case with shuffle and Figure 4J
+tmax = int(10**6 / 2)#10**6 in the case in Figure 4c-f
 tbin = 2000#for recording
 mRNA_dyn = np.zeros((tbin + 1, 2), float)
 gxp_dyn = np.zeros((tbin + 1, 2), float)

@@ -1,9 +1,9 @@
 # Learning_pair
 These are code files used in the following paper. 
 Title: Learning processes in hierarchical pairs regulate entire gene expression in cells. 
-Author: Tomoyuki Yamaguchi 
+Author: Tomoyuki Yamaguchi. 
 Journal: Scientific Reports volume 12, Article number: 7549 (2022) 
-available at https://www.nature.com/articles/s41598-022-10998-z 
+available at https://www.nature.com/articles/s41598-022-10998-z.
 The simulation was performed using Python 3.7 software. 
 Code file 1 is for the learning hierarchical-pair model. 
 Code file 2 is for clustering of genes. 
